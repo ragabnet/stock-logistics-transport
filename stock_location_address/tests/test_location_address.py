@@ -6,7 +6,6 @@ from odoo.tests import TransactionCase
 
 class TestLocationAddress(TransactionCase):
     def test_inheritance(self):
-<<<<<<< HEAD
         partner_1 = self.env["res.partner"].create({"name": "Partner1"})
         partner_2 = self.env["res.partner"].create({"name": "Partner2"})
         parent_location = self.env["stock.location"].create(
@@ -15,7 +14,6 @@ class TestLocationAddress(TransactionCase):
         location = self.env["stock.location"].create(
             {"name": "Location", "usage": "internal", "location_id": parent_location.id}
         )
-=======
         partner_1 = self.env['res.partner'].create({
             'name': 'Partner1'
         })
@@ -32,7 +30,6 @@ class TestLocationAddress(TransactionCase):
             'usage': 'internal',
             'location_id': parent_location.id,
         })
->>>>>>> [ADD] stock_location_address
         self.assertEqual(location.real_address_id, partner_1)
         location.address_id = partner_2
         self.assertEqual(location.real_address_id, partner_2)
